@@ -7,7 +7,7 @@
 
 #include "optox_api.h"
 #include <cmath>
-#include <helper_math.h>
+#include </CUDA/cuda-samples/Common/helper_math.h>
 
 namespace optox {
 /** Wrapper class for vector types like float2, double2 to allow

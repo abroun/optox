@@ -89,6 +89,12 @@ class BuildExtension(build_ext):
 EXT_MODULES = []
 
 def add_module(opname, inc_dir=[]):
+
+
+    #import os
+    #print(f"CUDA_ROOT_DIR = {os.environ.get('CUDA_ROOT_DIR')}")
+    #raise Exception("Adding module!!")
+
     EXT_MODULES.append(
         Extension(f"py_{opname}_operator", [
             os.path.join("${CMAKE_CURRENT_SOURCE_DIR}", f"py_{opname}_operator.cpp"),
@@ -100,9 +106,9 @@ def add_module(opname, inc_dir=[]):
                 get_pybind_include(),
             ] + inc_dir,
             library_dirs=["${OPTOX_LIBRARY_DIR}",
-                os.path.join("${CUDA_ROOT_DIR}", "lib64"),],
+                os.path.join("${CUDA_ROOT_DIR}", "lib64"), "/usr/local/cuda/lib64"],
             runtime_library_dirs=["${OPTOX_LIBRARY_DIR}",
-                os.path.join("${CUDA_ROOT_DIR}", "lib64"),],
+                os.path.join("${CUDA_ROOT_DIR}", "lib64"), "/usr/local/cuda/lib64"],
             libraries=["optox", "cudart"]
         ),
     )

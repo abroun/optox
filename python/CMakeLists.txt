@@ -13,7 +13,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib/python)
 ##----------------------------------------------------------------------------
 ## compile using python setup
 ##----------------------------------------------------------------------------
-find_program(PYTHON "python")
+find_program(PYTHON "python3")
 
 message(STATUS "python: ${PYTHON}")
 

@@ -54,3 +54,7 @@ set(SOURCES
 ##-----------------------------------------------------------------------------
 cuda_add_library(optox SHARED ${HEADERS} ${SOURCES} OPTIONS "-DOPTOX_EXPORTS")
 set_target_properties(optox PROPERTIES DEFINE_SYMBOL OPTOX_EXPORTS)
+
+target_include_directories(optox PUBLIC
+    "/CUDA/cuda-samples/Common/"
+)
